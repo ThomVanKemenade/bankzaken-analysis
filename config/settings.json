@@ -1,0 +1,21 @@
+{
+  "data_sources": {
+    "csv_directory": "../Transacties",
+    "excel_file": "../Bankzaken.xlsx"
+  },
+  "output": {
+    "directory": "./output",
+    "formats": ["csv", "png", "html"]
+  },
+  "analysis": {
+    "unusual_transaction_threshold": 3.0,
+    "min_category_percentage": 0.01,
+    "rolling_average_windows": [4, 12]
+  },
+  "visualization": {
+    "style": "seaborn-v0_8",
+    "color_palette": "husl",
+    "figure_size": [12, 8],
+    "dpi": 300
+  }
+}
