@@ -1,208 +1,250 @@
-# Bank Transaction Analysis Project
+# Bank Transaction ML Categorization System
 
-A comprehensive Python toolkit for analyzing personal bank transaction data.
+A machine learning-powered system for automatically categorizing personal bank transactions with interactive dashboards for financial tracking.
 
-## Features
+## 🚀 Features
 
-- 📊 **Data Processing**: Automatically load and clean CSV files from multiple banks
-- 🏷️ **Smart Categorization**: Automatically categorize transactions (groceries, utilities, transport, etc.)
+- 🤖 **Machine Learning Categorization**: Train your own ML model on your spending patterns
+- 🏷️ **Smart Manual Labeling**: Interactive interface for training data creation
+- 📊 **Interactive Dashboards**: Beautiful Streamlit-based analytics and visualizations
+- 🔧 **Customizable Categories**: Hierarchical category system you can modify
 - 📈 **Trend Analysis**: Track spending patterns over time with rolling averages
-- 📉 **Visualizations**: Generate charts and graphs for easy interpretation
-- 🔍 **Anomaly Detection**: Find unusual transactions that might need attention
-- 📋 **Monthly Summaries**: Detailed breakdowns by month with income vs expenses
-- 🔧 **Configurable**: Easy to customize categories and analysis parameters
+- � **Intelligent Matching**: Combines rule-based and ML predictions with confidence scoring
 
-## Quick Start
+## 🎯 How It Works
 
-1. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+1. **Load Transactions**: Import CSV files from your bank(s)
+2. **Manual Labeling**: Categorize a sample of transactions using the intuitive interface
+3. **Train ML Model**: Let the system learn your categorization patterns
+4. **Auto-Categorization**: New transactions get automatically categorized
+5. **Dashboard Analysis**: Visualize your spending patterns and trends
 
-2. **Prepare Your Data**
-   - Place your bank CSV files in `../Transacties/` directory
-   - Optionally place `Bankzaken.xlsx` in the parent directory
+## 📦 Quick Start
 
-3. **Run Analysis**
-   ```bash
-   python run_analysis.py
-   ```
-   Or use the main script:
-   ```bash
-   python src/main.py
-   ```
-
-4. **Interactive Analysis**
-   Open the Jupyter notebook:
-   ```bash
-   jupyter notebook notebooks/bank_analysis.ipynb
-   ```
-
-## Project Structure
-
-```
-├── src/                    # Source code
-│   ├── main.py            # Main analysis script
-│   ├── data_processor.py  # Data loading and cleaning
-│   ├── analyzer.py        # Transaction analysis
-│   └── visualizer.py      # Chart generation
-├── notebooks/             # Jupyter notebooks
-│   └── bank_analysis.ipynb
-├── tests/                 # Unit tests
-├── config/                # Configuration files
-│   ├── settings.py        # Python configuration
-│   └── settings.json      # JSON configuration
-├── output/                # Generated results
-├── requirements.txt       # Python dependencies
-└── README.md             # This file
+### 1. Install Dependencies
+```bash
+pip install -r requirements.txt
 ```
 
-## Data Format
+### 2. Prepare Your Data
+- Place your bank CSV files in `../Transacties/` directory (relative to this project)
+- The system handles multiple Dutch bank formats automatically
 
-The tool automatically handles various CSV formats and encodings. It expects columns that can be mapped to:
-
-- **Date**: Transaction date (various formats supported)
-- **Amount**: Transaction amount (positive for income, negative for expenses)
-- **Description**: Transaction description for categorization
-- **Account**: Account number (optional)
-- **Balance**: Account balance after transaction (optional)
-
-Common Dutch bank formats (ING, Rabobank, ABN AMRO, etc.) are automatically detected.
-
-## Configuration
-
-### Categories
-
-Edit `config/settings.py` to customize transaction categories:
-
-```python
-CATEGORIZATION_RULES = {
-    "groceries": ["supermarket", "grocery", "albert heijn", "jumbo"],
-    "utilities": ["ziggo", "kpn", "essent", "eneco"],
-    # Add your own categories...
-}
+### 3. Run the Application
+**Windows:**
+```bash
+run_app.bat
 ```
 
-### Analysis Parameters
+**Linux/Mac:**
+```bash
+chmod +x run_app.sh
+./run_app.sh
+```
 
-Adjust analysis settings in `config/settings.json`:
+**Or manually:**
+```bash
+streamlit run src/main.py
+```
 
+### 4. Start Categorizing!
+1. Navigate to "Manual Labeling" to label some transactions
+2. Train your ML model once you have ~50+ labeled samples
+3. View your financial dashboard for insights
+
+## 🏗️ Project Structure
+
+```
+├── src/                          # Source code
+│   ├── main.py                  # Main Streamlit application
+│   ├── data_loader.py           # CSV data loading and cleaning
+│   ├── ml_categorizer.py        # ML model training and prediction
+│   ├── manual_matcher.py        # Manual labeling interface
+│   └── dashboard.py             # Interactive dashboard
+├── config/                       # Configuration
+│   ├── categories.json          # Category definitions and ML config
+│   └── settings.py              # Python configuration
+├── models/                       # Trained ML models
+├── data/                        # Training data storage
+├── output/                      # Analysis results and logs
+├── requirements.txt             # Python dependencies
+└── README.md                    # This file
+```
+
+## 🏷️ Category System
+
+The system uses a hierarchical category structure:
+
+### Main Categories:
+- **Income**: salary, benefits, investments, other_income
+- **Housing**: rent_mortgage, utilities, maintenance
+- **Transportation**: fuel, public_transport, car_expenses, ride_sharing
+- **Food**: groceries, restaurants, drinks
+- **Shopping**: clothing, electronics, household, personal_care
+- **Entertainment**: subscriptions, activities, travel
+- **Financial**: banking, insurance, investments
+
+Each subcategory includes Dutch and English keywords for automatic detection.
+
+## 🤖 Machine Learning Approach
+
+### Method: TF-IDF + Random Forest
+- **Text Features**: Transaction descriptions and counterparty names
+- **Additional Features**: Amount categories, day of week, time patterns
+- **Model**: Random Forest Classifier with balanced class weights
+- **Confidence Scoring**: Predictions include confidence levels for review
+
+### Training Process:
+1. **Rule-based Start**: Initial categorization using keyword matching
+2. **Manual Correction**: Review and correct categorizations
+3. **Feature Engineering**: Convert text to numerical features
+4. **Model Training**: Train Random Forest on labeled data
+5. **Validation**: Test accuracy and generate performance metrics
+
+## 📊 Dashboard Features
+
+### Overview Metrics
+- Total income, expenses, and net amount
+- Transaction counts and averages
+- Date range coverage
+
+### Spending Analysis
+- Monthly income vs expenses trends
+- Weekly spending patterns
+- Daily spending with rolling averages
+
+### Category Insights
+- Spending breakdown by category (pie charts and bars)
+- Detailed subcategory analysis
+- Monthly trends by category
+
+### Transaction Details
+- Searchable and filterable transaction table
+- ML confidence scores and prediction methods
+- Export capabilities
+
+## ⚙️ Configuration
+
+### Category Customization
+Edit `config/categories.json` to:
+- Add new categories or subcategories
+- Modify keyword lists for better matching
+- Adjust ML model parameters
+
+### ML Parameters
 ```json
 {
-  "analysis": {
-    "unusual_transaction_threshold": 3.0,
-    "min_category_percentage": 0.01
+  "ml_config": {
+    "min_training_samples": 50,
+    "confidence_threshold": 0.7,
+    "test_size": 0.2
   }
 }
 ```
 
-## Output Files
+## 💡 Tips for Best Results
 
-All results are saved to the `output/` directory:
+### Labeling Strategy:
+1. **Start with obvious ones**: Clear categories like salary, supermarkets
+2. **Label diverse amounts**: Include small and large transactions
+3. **Cover time periods**: Label transactions from different months
+4. **Aim for balance**: Try to have at least 10-20 samples per category
 
-- `monthly_summary.csv` - Monthly income/expense summaries
-- `category_summary.csv` - Spending breakdown by category
-- `spending_trends.csv` - Weekly spending trends with rolling averages
-- `processed_transactions.csv` - Cleaned and categorized transaction data
-- Various PNG chart files for visualizations
+### Improving Accuracy:
+- **Review low-confidence predictions** regularly
+- **Retrain model** after adding more labeled data
+- **Adjust category keywords** based on your specific transaction patterns
+- **Use consistent labeling** - be systematic in your categorization choices
 
-## Usage Examples
+## 🔧 Advanced Usage
 
-### Basic Analysis
+### Command Line Training
 ```python
-from src.data_processor import BankDataProcessor
-from src.analyzer import TransactionAnalyzer
+from src.ml_categorizer import MLCategorizer
+from src.data_loader import TransactionDataLoader
+import pandas as pd
 
-# Load data
-processor = BankDataProcessor("../Transacties")
-data = processor.load_csv_files()
-clean_data = processor.clean_data(processor.combine_dataframes(data))
+# Load training data
+training_df = pd.read_csv("data/training_data.csv")
 
-# Analyze
-analyzer = TransactionAnalyzer(clean_data)
-monthly_summary = analyzer.monthly_summary()
-categories = analyzer.categorize_transactions()
+# Train model
+categorizer = MLCategorizer()
+results = categorizer.train_model(training_df)
+categorizer.save_model()
+
+print(f"Model accuracy: {results['accuracy']:.3f}")
 ```
 
-### Custom Visualizations
+### Batch Processing
 ```python
-from src.visualizer import DataVisualizer
+from src.data_loader import TransactionDataLoader
+from src.ml_categorizer import MLCategorizer
 
-# Create visualizer
-viz = DataVisualizer(clean_data)
+# Load and categorize all transactions
+loader = TransactionDataLoader()
+df = loader.load_all_transactions()
 
-# Generate charts
-viz.create_monthly_spending_chart()
-viz.create_category_pie_chart(categories)
-viz.create_spending_trends_chart(trends)
+categorizer = MLCategorizer()
+categorizer.load_model()
+
+categorized_df = categorizer.predict_categories(df)
+categorized_df.to_csv("output/categorized_transactions.csv", index=False)
 ```
 
-## Testing
+## 🛠️ Troubleshooting
 
-Run the test suite:
-```bash
-pytest tests/
-```
+### Common Issues:
 
-Or run specific tests:
-```bash
-pytest tests/test_data_processor.py
-```
+**"No CSV files found"**
+- Ensure CSV files are in `../Transacties/` directory
+- Check file permissions
 
-## Requirements
+**"Model training failed"**
+- Need at least 10+ labeled transactions per category
+- Check for balanced categories in training data
 
-- Python 3.8+
-- pandas >= 2.0.0
-- numpy >= 1.24.0
-- matplotlib >= 3.7.0
-- seaborn >= 0.12.0
-- openpyxl >= 3.1.0 (for Excel files)
-- jupyter >= 1.0.0 (for notebooks)
+**"Import errors"**
+- Install requirements: `pip install -r requirements.txt`
+- Make sure you're running from the project root directory
 
-## Security Note
+**"Date parsing errors"**
+- Check date formats in your CSV files
+- The system supports multiple formats automatically
 
-This tool is designed for local analysis of your personal financial data. CSV and Excel files are automatically excluded from Git commits via `.gitignore` to protect your sensitive financial information.
+**"Encoding issues"**
+- The system tries multiple encodings automatically
+- For unusual formats, modify `_read_csv_flexible()` in `data_loader.py`
 
-## Troubleshooting
+### Performance Tips:
+- **Large datasets**: Consider sampling for initial model training
+- **Memory usage**: Process data in chunks for very large files
+- **Speed**: Use fewer n-grams in TF-IDF for faster training
 
-### Common Issues
+## 📈 Future Enhancements
 
-1. **"No CSV files found"**
-   - Ensure CSV files are in the `../Transacties/` directory
-   - Check file permissions
+Possible improvements you could add:
+- 📱 Mobile-responsive dashboard
+- 🔄 Automatic retraining workflows  
+- 📧 Email expense reports
+- 🎯 Budget tracking and alerts
+- 🏪 Merchant categorization
+- 📊 Comparison with previous periods
+- 💱 Multi-currency support
 
-2. **"Import errors"**
-   - Install requirements: `pip install -r requirements.txt`
-   - Ensure you're running from the project root directory
+## 🤝 Contributing
 
-3. **"Date parsing errors"**
-   - Check date formats in your CSV files
-   - Add custom date formats to `config/settings.py`
+This is a personal finance tool, but feel free to:
+1. Fork the repository for your own use
+2. Suggest improvements via issues
+3. Share your category configurations
+4. Report bugs or edge cases
 
-4. **"Encoding errors"**
-   - The tool tries multiple encodings automatically
-   - For unusual encodings, modify `_read_csv_flexible()` in `data_processor.py`
-
-### Getting Help
-
-1. Check the Jupyter notebook for interactive examples
-2. Review test files for usage patterns
-3. Examine the source code - it's well documented
-4. Check the generated log files in `output/analysis.log`
-
-## Contributing
-
-Feel free to customize this tool for your needs:
-
-1. Add new analysis functions to `analyzer.py`
-2. Create new visualizations in `visualizer.py`
-3. Extend categorization rules in `config/settings.py`
-4. Add tests for new functionality
-
-## License
+## 📄 License
 
 This project is for personal use. Modify and distribute as needed for your own financial analysis.
 
 ---
 
-**Happy analyzing! 📊💰**
+**Happy analyzing! 💰📊**
+
+*Remember: Your financial data stays local - nothing is sent to external services.*

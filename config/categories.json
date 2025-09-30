@@ -1,0 +1,126 @@
+{
+  "categories": {
+    "income": {
+      "salary": {
+        "keywords": ["salary", "wage", "payroll", "loon", "salaris", "werkgever"],
+        "description": "Regular employment income"
+      },
+      "benefits": {
+        "keywords": ["toeslagen", "uitkering", "benefit", "allowance", "subsidy", "kinderbijslag"],
+        "description": "Government benefits and allowances"
+      },
+      "investments": {
+        "keywords": ["dividend", "rente", "interest", "capital", "belegging"],
+        "description": "Investment returns and interest"
+      },
+      "other_income": {
+        "keywords": ["refund", "terugbetaling", "cashback", "gift", "cadeau"],
+        "description": "Other income sources"
+      }
+    },
+    "housing": {
+      "rent_mortgage": {
+        "keywords": ["huur", "rent", "hypotheek", "mortgage", "woningcorporatie"],
+        "description": "Rent and mortgage payments"
+      },
+      "utilities": {
+        "keywords": ["energie", "gas", "elektra", "water", "internet", "ziggo", "kpn", "eneco", "essent"],
+        "description": "Utilities and home services"
+      },
+      "maintenance": {
+        "keywords": ["onderhoud", "repair", "schoonmaak", "cleaning", "tuin", "garden"],
+        "description": "Home maintenance and repairs"
+      }
+    },
+    "transportation": {
+      "fuel": {
+        "keywords": ["tankstation", "shell", "bp", "esso", "benzine", "diesel", "laden"],
+        "description": "Fuel and charging costs"
+      },
+      "public_transport": {
+        "keywords": ["ns", "gvb", "ret", "arriva", "train", "bus", "metro", "ov-chipkaart"],
+        "description": "Public transportation"
+      },
+      "car_expenses": {
+        "keywords": ["verzekering", "apk", "onderhoud", "parking", "parkeren", "garage"],
+        "description": "Car-related expenses"
+      },
+      "ride_sharing": {
+        "keywords": ["uber", "taxi", "bolt", "ola"],
+        "description": "Ride sharing and taxis"
+      }
+    },
+    "food": {
+      "groceries": {
+        "keywords": ["albert heijn", "jumbo", "lidl", "aldi", "plus", "spar", "dirk", "vomar", "supermarkt"],
+        "description": "Grocery shopping"
+      },
+      "restaurants": {
+        "keywords": ["restaurant", "cafe", "eetcafe", "takeaway", "thuisbezorgd", "deliveroo", "ubereats"],
+        "description": "Dining out and food delivery"
+      },
+      "drinks": {
+        "keywords": ["bar", "kroeg", "coffee", "starbucks", "costa", "alcohol", "slijterij"],
+        "description": "Beverages and drinks"
+      }
+    },
+    "shopping": {
+      "clothing": {
+        "keywords": ["h&m", "zara", "primark", "c&a", "clothing", "mode", "schoenen", "shoes"],
+        "description": "Clothing and fashion"
+      },
+      "electronics": {
+        "keywords": ["mediamarkt", "coolblue", "bol.com", "apple", "samsung", "tech", "computer"],
+        "description": "Electronics and technology"
+      },
+      "household": {
+        "keywords": ["ikea", "blokker", "hema", "action", "furniture", "meubels", "huishouden"],
+        "description": "Household items and furniture"
+      },
+      "personal_care": {
+        "keywords": ["apotheek", "pharmacy", "etos", "kruidvat", "cosmetica", "healthcare"],
+        "description": "Personal care and health"
+      }
+    },
+    "entertainment": {
+      "subscriptions": {
+        "keywords": ["netflix", "spotify", "disney", "amazon prime", "youtube", "subscription"],
+        "description": "Digital subscriptions"
+      },
+      "activities": {
+        "keywords": ["bioscoop", "pathe", "vue", "sport", "fitness", "hobby", "concert"],
+        "description": "Entertainment and activities"
+      },
+      "travel": {
+        "keywords": ["booking", "hotel", "vliegticket", "flight", "vakantie", "holiday", "airbnb"],
+        "description": "Travel and vacation"
+      }
+    },
+    "financial": {
+      "banking": {
+        "keywords": ["bankkosten", "bank fee", "transfer", "overboeking", "atm", "geldautomaat"],
+        "description": "Banking fees and transfers"
+      },
+      "insurance": {
+        "keywords": ["verzekering", "insurance", "premium", "zorgverzekering", "autoverzekering"],
+        "description": "Insurance premiums"
+      },
+      "investments": {
+        "keywords": ["beleggen", "trading", "broker", "crypto", "bitcoin", "aandelen"],
+        "description": "Investment transactions"
+      }
+    }
+  },
+  "ml_config": {
+    "min_training_samples": 50,
+    "test_size": 0.2,
+    "random_state": 42,
+    "confidence_threshold": 0.7
+  },
+  "data_paths": {
+    "transactions_dir": "../Transacties",
+    "training_data": "./data/training_data.csv",
+    "model_file": "./models/categorizer_model.joblib",
+    "vectorizer_file": "./models/tfidf_vectorizer.joblib"
+  }
+}
