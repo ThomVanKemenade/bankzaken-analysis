@@ -1,250 +1,103 @@
-# Bank Transaction ML Categorization System
+# Bankzaken Transaction Analysis
 
-A machine learning-powered system for automatically categorizing personal bank transactions with interactive dashboards for financial tracking.
+A clean, simple system for loading and processing Dutch banking transaction data.
 
-## 🚀 Features
+## Overview
 
-- 🤖 **Machine Learning Categorization**: Train your own ML model on your spending patterns
-- 🏷️ **Smart Manual Labeling**: Interactive interface for training data creation
-- 📊 **Interactive Dashboards**: Beautiful Streamlit-based analytics and visualizations
-- 🔧 **Customizable Categories**: Hierarchical category system you can modify
-- 📈 **Trend Analysis**: Track spending patterns over time with rolling averages
-- � **Intelligent Matching**: Combines rule-based and ML predictions with confidence scoring
+This system loads transaction files from multiple Dutch banks, combines them into a unified dataset with English column names, and assigns persistent unique IDs to each transaction.
 
-## 🎯 How It Works
+## Files
 
-1. **Load Transactions**: Import CSV files from your bank(s)
-2. **Manual Labeling**: Categorize a sample of transactions using the intuitive interface
-3. **Train ML Model**: Let the system learn your categorization patterns
-4. **Auto-Categorization**: New transactions get automatically categorized
-5. **Dashboard Analysis**: Visualize your spending patterns and trends
+- **`transaction_loader.py`** - Main transaction data loader
+- **`combined_transactions.csv`** - Output file with processed transactions
+- **`README.md`** - This documentation
 
-## 📦 Quick Start
+## Features
 
-### 1. Install Dependencies
+✅ **Multi-bank Support**: Rabobank CSV files, ABN AMRO Excel files  
+✅ **Automatic Discovery**: Finds all transaction files in subdirectories  
+✅ **Multi-encoding**: Handles Dutch bank file encoding (ISO-8859-1, UTF-8)  
+✅ **Column Translation**: Dutch → English field names  
+✅ **Description Combination**: Merges Omschrijving-1,2,3 → Description  
+✅ **Persistent IDs**: Unique transaction IDs that don't change when adding data  
+✅ **Numeric Conversion**: Proper handling of European decimal format  
+✅ **Data Validation**: Type checking and error handling  
+
+## Usage
+
+### Load All Transaction Data
+
 ```bash
-pip install -r requirements.txt
+python transaction_loader.py
 ```
 
-### 2. Prepare Your Data
-- Place your bank CSV files in `../Transacties/` directory (relative to this project)
-- The system handles multiple Dutch bank formats automatically
+This will:
+1. Search `C:\Users\thomv\Documents\Bankzaken\Transacties` and subdirectories
+2. Load all CSV and Excel transaction files
+3. Combine and process the data
+4. Save to `combined_transactions.csv`
 
-### 3. Run the Application
-**Windows:**
-```bash
-run_app.bat
-```
+### Use as Python Module
 
-**Linux/Mac:**
-```bash
-chmod +x run_app.sh
-./run_app.sh
-```
-
-**Or manually:**
-```bash
-streamlit run src/main.py
-```
-
-### 4. Start Categorizing!
-1. Navigate to "Manual Labeling" to label some transactions
-2. Train your ML model once you have ~50+ labeled samples
-3. View your financial dashboard for insights
-
-## 🏗️ Project Structure
-
-```
-├── src/                          # Source code
-│   ├── main.py                  # Main Streamlit application
-│   ├── data_loader.py           # CSV data loading and cleaning
-│   ├── ml_categorizer.py        # ML model training and prediction
-│   ├── manual_matcher.py        # Manual labeling interface
-│   └── dashboard.py             # Interactive dashboard
-├── config/                       # Configuration
-│   ├── categories.json          # Category definitions and ML config
-│   └── settings.py              # Python configuration
-├── models/                       # Trained ML models
-├── data/                        # Training data storage
-├── output/                      # Analysis results and logs
-├── requirements.txt             # Python dependencies
-└── README.md                    # This file
-```
-
-## 🏷️ Category System
-
-The system uses a hierarchical category structure:
-
-### Main Categories:
-- **Income**: salary, benefits, investments, other_income
-- **Housing**: rent_mortgage, utilities, maintenance
-- **Transportation**: fuel, public_transport, car_expenses, ride_sharing
-- **Food**: groceries, restaurants, drinks
-- **Shopping**: clothing, electronics, household, personal_care
-- **Entertainment**: subscriptions, activities, travel
-- **Financial**: banking, insurance, investments
-
-Each subcategory includes Dutch and English keywords for automatic detection.
-
-## 🤖 Machine Learning Approach
-
-### Method: TF-IDF + Random Forest
-- **Text Features**: Transaction descriptions and counterparty names
-- **Additional Features**: Amount categories, day of week, time patterns
-- **Model**: Random Forest Classifier with balanced class weights
-- **Confidence Scoring**: Predictions include confidence levels for review
-
-### Training Process:
-1. **Rule-based Start**: Initial categorization using keyword matching
-2. **Manual Correction**: Review and correct categorizations
-3. **Feature Engineering**: Convert text to numerical features
-4. **Model Training**: Train Random Forest on labeled data
-5. **Validation**: Test accuracy and generate performance metrics
-
-## 📊 Dashboard Features
-
-### Overview Metrics
-- Total income, expenses, and net amount
-- Transaction counts and averages
-- Date range coverage
-
-### Spending Analysis
-- Monthly income vs expenses trends
-- Weekly spending patterns
-- Daily spending with rolling averages
-
-### Category Insights
-- Spending breakdown by category (pie charts and bars)
-- Detailed subcategory analysis
-- Monthly trends by category
-
-### Transaction Details
-- Searchable and filterable transaction table
-- ML confidence scores and prediction methods
-- Export capabilities
-
-## ⚙️ Configuration
-
-### Category Customization
-Edit `config/categories.json` to:
-- Add new categories or subcategories
-- Modify keyword lists for better matching
-- Adjust ML model parameters
-
-### ML Parameters
-```json
-{
-  "ml_config": {
-    "min_training_samples": 50,
-    "confidence_threshold": 0.7,
-    "test_size": 0.2
-  }
-}
-```
-
-## 💡 Tips for Best Results
-
-### Labeling Strategy:
-1. **Start with obvious ones**: Clear categories like salary, supermarkets
-2. **Label diverse amounts**: Include small and large transactions
-3. **Cover time periods**: Label transactions from different months
-4. **Aim for balance**: Try to have at least 10-20 samples per category
-
-### Improving Accuracy:
-- **Review low-confidence predictions** regularly
-- **Retrain model** after adding more labeled data
-- **Adjust category keywords** based on your specific transaction patterns
-- **Use consistent labeling** - be systematic in your categorization choices
-
-## 🔧 Advanced Usage
-
-### Command Line Training
 ```python
-from src.ml_categorizer import MLCategorizer
-from src.data_loader import TransactionDataLoader
-import pandas as pd
+from transaction_loader import load_all_transactions
 
-# Load training data
-training_df = pd.read_csv("data/training_data.csv")
-
-# Train model
-categorizer = MLCategorizer()
-results = categorizer.train_model(training_df)
-categorizer.save_model()
-
-print(f"Model accuracy: {results['accuracy']:.3f}")
+# Load all transactions
+df = load_all_transactions()
+print(f"Loaded {len(df)} transactions")
 ```
 
-### Batch Processing
-```python
-from src.data_loader import TransactionDataLoader
-from src.ml_categorizer import MLCategorizer
+## Output Format
 
-# Load and categorize all transactions
-loader = TransactionDataLoader()
-df = loader.load_all_transactions()
+The combined dataset contains 17 columns:
 
-categorizer = MLCategorizer()
-categorizer.load_model()
+| Column | Description |
+|--------|-------------|
+| `Transaction_ID` | Unique persistent ID (TXN_XXXXXXXX) |
+| `Date` | Transaction date (datetime) |
+| `Amount` | Transaction amount (float64) |
+| `Description` | Combined description text |
+| `Account_Number` | Account IBAN/BBAN |
+| `Currency` | Currency code |
+| `Sequence_Number` | Bank sequence number |
+| `Balance_After` | Account balance after transaction |
+| `Counterparty_Account` | Other party's account |
+| `Counterparty_Name` | Other party's name |
+| `Ultimate_Party_Name` | Ultimate beneficiary |
+| `Initiating_Party_Name` | Transaction initiator |
+| `Transaction_Reference` | Bank reference |
+| `Authorization_ID` | Authorization reference |
+| `Creditor_ID` | Creditor identifier |
+| `Payment_Reference` | Payment reference |
+| `Source_File` | Original filename |
 
-categorized_df = categorizer.predict_categories(df)
-categorized_df.to_csv("output/categorized_transactions.csv", index=False)
+## Data Sources
+
+Expected directory structure:
+```
+C:\Users\thomv\Documents\Bankzaken\Transacties\
+├── CSV_A_accounts_*.csv              # Current account data
+├── Rabo_20XX_CSV_A_accounts_*.csv    # Historical Rabobank data
+└── ABN\
+    └── *.xls                         # ABN AMRO Excel files
 ```
 
-## 🛠️ Troubleshooting
+## Transaction ID System
 
-### Common Issues:
+Each transaction gets a unique ID based on:
+- Date, Amount, Description, Counterparty, Account, Sequence Number
+- Format: `TXN_XXXXXXXX` (e.g., `TXN_5D5027CE`)
+- **Persistent**: Same transaction = Same ID (even across data loads)
+- **Unique**: Different transactions = Different IDs
+- **Future-proof**: Adding new data won't change existing IDs
 
-**"No CSV files found"**
-- Ensure CSV files are in `../Transacties/` directory
-- Check file permissions
+## Requirements
 
-**"Model training failed"**
-- Need at least 10+ labeled transactions per category
-- Check for balanced categories in training data
+- Python 3.7+
+- pandas
+- pathlib (built-in)
+- hashlib (built-in)
 
-**"Import errors"**
-- Install requirements: `pip install -r requirements.txt`
-- Make sure you're running from the project root directory
+## Author
 
-**"Date parsing errors"**
-- Check date formats in your CSV files
-- The system supports multiple formats automatically
-
-**"Encoding issues"**
-- The system tries multiple encodings automatically
-- For unusual formats, modify `_read_csv_flexible()` in `data_loader.py`
-
-### Performance Tips:
-- **Large datasets**: Consider sampling for initial model training
-- **Memory usage**: Process data in chunks for very large files
-- **Speed**: Use fewer n-grams in TF-IDF for faster training
-
-## 📈 Future Enhancements
-
-Possible improvements you could add:
-- 📱 Mobile-responsive dashboard
-- 🔄 Automatic retraining workflows  
-- 📧 Email expense reports
-- 🎯 Budget tracking and alerts
-- 🏪 Merchant categorization
-- 📊 Comparison with previous periods
-- 💱 Multi-currency support
-
-## 🤝 Contributing
-
-This is a personal finance tool, but feel free to:
-1. Fork the repository for your own use
-2. Suggest improvements via issues
-3. Share your category configurations
-4. Report bugs or edge cases
-
-## 📄 License
-
-This project is for personal use. Modify and distribute as needed for your own financial analysis.
-
----
-
-**Happy analyzing! 💰📊**
-
-*Remember: Your financial data stays local - nothing is sent to external services.*
+Bankzaken Analysis System - October 2025

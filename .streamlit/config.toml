@@ -1,0 +1,23 @@
+[theme]
+# Professional financial app theme - Dark, comfortable, easy on the eyes
+base = "dark"
+primaryColor = "#5DADE2"        # Softer blue for dark theme
+backgroundColor = "#2C3E50"     # Dark blue-grey background, very comfortable
+secondaryBackgroundColor = "#34495E"  # Slightly lighter dark blue-grey for sidebar
+textColor = "#ECF0F1"          # Light grey text for excellent readability on dark
+font = "sans serif"            # Modern sans-serif font
+
+[browser]
+# Browser configuration for professional appearance
+gatherUsageStats = false
+
+[server]
+# Server configuration
+headless = true
+enableCORS = false  
+enableXsrfProtection = true
+
+[client]
+# Client configuration for better UX
+showErrorDetails = false
+toolbarMode = "minimal"

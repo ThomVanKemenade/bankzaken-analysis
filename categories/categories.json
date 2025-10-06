@@ -1,0 +1,377 @@
+{
+  "categories": {
+    "Food & Dining": {
+      "description": "Dining experiences and eating out",
+      "active": true,
+      "subcategories": {
+        "Restaurants": {
+          "description": "Dining out at restaurants",
+          "active": true
+        },
+        "Delivery & Takeout": {
+          "description": "Food delivery and takeout services",
+          "active": true
+        },
+        "Bars & Pubs": {
+          "description": "Bars, pubs, and drinking establishments",
+          "active": true
+        }
+      }
+    },
+    "Transportation": {
+      "description": "All transportation related expenses",
+      "active": true,
+      "subcategories": {
+        "Public Transport": {
+          "description": "Public transportation costs (OV-chipkaart, train, bus, metro)",
+          "active": true
+        },
+        "Vehicle Expenses": {
+          "description": "Car maintenance, fuel, insurance, parking",
+          "active": true
+        },
+        "Rideshare & Taxi": {
+          "description": "Taxi, Uber, bike sharing services",
+          "active": true
+        },
+        "Bicycle": {
+          "description": "Bike purchases, maintenance, accessories",
+          "active": true
+        }
+      }
+    },
+    "Housing & Utilities": {
+      "description": "Housing costs and utilities",
+      "active": true,
+      "subcategories": {
+        "Utilities": {
+          "description": "Basic utilities like electricity, gas, water",
+          "active": true
+        },
+        "Home Maintenance": {
+          "description": "Home improvement and maintenance",
+          "active": true
+        },
+        "Rent": {
+          "description": "Rent, mortgage and housing-related expenses",
+          "active": true
+        }
+      }
+    },
+    "Healthcare": {
+      "description": "Medical and health related expenses",
+      "active": true,
+      "subcategories": {
+        "Medical": {
+          "description": "General practitioner, specialist visits, medical treatments",
+          "active": true
+        },
+        "Dental": {
+          "description": "Dental care and orthodontics",
+          "active": true
+        },
+        "Health Insurance": {
+          "description": "Health insurance premiums and deductibles",
+          "active": true
+        },
+        "Pharmacy": {
+          "description": "Medications and pharmacy expenses",
+          "active": true
+        },
+        "Mental Health": {
+          "description": "Psychology, therapy, mental health services",
+          "active": true
+        },
+        "Opticien": {
+          "description": "",
+          "active": true
+        }
+      }
+    },
+    "Shopping": {
+      "description": "General shopping and purchases",
+      "active": true,
+      "subcategories": {
+        "Groceries": {
+          "description": "Regular grocery shopping (supermarkets, food stores)",
+          "active": true
+        },
+        "Clothing & Accessories": {
+          "description": "Clothing, shoes, and accessories",
+          "active": true
+        },
+        "Electronics": {
+          "description": "Electronics and technology purchases",
+          "active": true
+        },
+        "Home & Garden": {
+          "description": "Home goods and garden supplies",
+          "active": true
+        },
+        "Drugstore/Pharmacy": {
+          "description": "Drugstores and pharmacies (Etos, Kruidvat, mixed personal care and household items)",
+          "active": true
+        }
+      }
+    },
+    "Entertainment": {
+      "description": "Entertainment and leisure activities",
+      "active": true,
+      "subcategories": {
+        "Events & Activities": {
+          "description": "Live events, concerts, theater, movies",
+          "active": true
+        },
+        "Hobbies & Recreation": {
+          "description": "Personal hobbies and recreational activities",
+          "active": true
+        },
+        "Gaming": {
+          "description": "Video games, gaming services, and equipment",
+          "active": true
+        }
+      }
+    },
+    "Subscriptions & Services": {
+      "description": "Recurring subscriptions and service contracts",
+      "active": true,
+      "subcategories": {
+        "Mobile & Internet": {
+          "description": "Mobile phone plans, internet, cable TV subscriptions",
+          "active": true
+        },
+        "Streaming & Media": {
+          "description": "Digital entertainment services (Netflix, Spotify, etc.)",
+          "active": true
+        },
+        "Professional Services": {
+          "description": "Work-related subscriptions and professional services",
+          "active": true
+        },
+        "Software & Apps": {
+          "description": "Software subscriptions, app subscriptions, cloud services",
+          "active": true
+        }
+      }
+    },
+    "Sports & Fitness": {
+      "description": "All sports and fitness related expenses",
+      "active": true,
+      "subcategories": {
+        "Gym & Fitness": {
+          "description": "Gym memberships, fitness classes, personal training",
+          "active": true
+        },
+        "Sports Events": {
+          "description": "Race entries, tournament fees, sports events",
+          "active": true
+        },
+        "Sports Equipment": {
+          "description": "Sports gear, equipment, and apparel",
+          "active": true
+        },
+        "Sports Memberships": {
+          "description": "Club memberships, sports associations",
+          "active": true
+        }
+      }
+    },
+    "Personal Care": {
+      "description": "Personal care and beauty expenses",
+      "active": true,
+      "subcategories": {
+        "Beauty & Cosmetics": {
+          "description": "Cosmetics, skincare, beauty products",
+          "active": true
+        },
+        "Hair Care": {
+          "description": "Haircuts, salon services, hair products",
+          "active": true
+        },
+        "Personal Hygiene": {
+          "description": "Personal hygiene products and services",
+          "active": true
+        }
+      }
+    },
+    "Financial Services": {
+      "description": "Banking, investments, and financial services",
+      "active": true,
+      "subcategories": {
+        "Banking": {
+          "description": "Bank fees and services",
+          "active": true
+        },
+        "Insurance": {
+          "description": "Various insurance premiums",
+          "active": true
+        },
+        "Investments": {
+          "description": "Investment and savings",
+          "active": true
+        },
+        "Account Transfers": {
+          "description": "Transfers between your own accounts (checking, savings, investment)",
+          "active": true
+        }
+      }
+    },
+    "Income": {
+      "description": "Personal income sources (non-government)",
+      "active": true,
+      "subcategories": {
+        "Employment": {
+          "description": "Salary, wages, and employment income",
+          "active": true
+        },
+        "Investment Income": {
+          "description": "Dividends, interest, capital gains",
+          "active": true
+        },
+        "Freelance & Business": {
+          "description": "Self-employment and business income",
+          "active": true
+        },
+        "Other Income": {
+          "description": "Refunds, miscellaneous income (non-family)",
+          "active": true
+        }
+      }
+    },
+
+    "Family Support": {
+      "description": "Financial support and gifts from family members",
+      "active": true,
+      "subcategories": {
+        "General Gifts": {
+          "description": "Birthday gifts, holiday gifts, general family gifts",
+          "active": true
+        },
+        "Education Support": {
+          "description": "University costs help, tuition assistance, study materials",
+          "active": true
+        },
+        "Housing Support": {
+          "description": "Help with rent, housing deposits, moving costs",
+          "active": true
+        },
+        "Emergency Support": {
+          "description": "Emergency financial assistance from family",
+          "active": true
+        },
+        "Living Expenses Help": {
+          "description": "General support for daily living expenses",
+          "active": true
+        }
+      }
+    },
+    "Taxes & Government": {
+      "description": "All government-related financial transactions (payments and benefits)",
+      "active": true,
+      "subcategories": {
+        "Income Tax": {
+          "description": "Income tax payments and adjustments",
+          "active": true
+        },
+        "Municipal Taxes": {
+          "description": "Local government taxes (gemeentebelasting)",
+          "active": true
+        },
+        "Government Fees": {
+          "description": "Government service fees, permits, licenses",
+          "active": true
+        },
+        "Housing Allowance": {
+          "description": "Monthly housing allowance (huurtoeslag) from government",
+          "active": true
+        },
+        "Healthcare Allowance": {
+          "description": "Monthly healthcare allowance (zorgtoeslag) from government",
+          "active": true
+        },
+        "Government Benefits": {
+          "description": "Unemployment benefits, child allowance, disability benefits",
+          "active": true
+        },
+        "Tax Refunds": {
+          "description": "Income tax refunds and government rebates",
+          "active": true
+        }
+      }
+    },
+    "Education": {
+      "description": "Education and learning related expenses",
+      "active": true,
+      "subcategories": {
+        "Formal Education": {
+          "description": "School and university costs",
+          "active": true
+        },
+        "Professional Development": {
+          "description": "Career and skill development",
+          "active": true
+        }
+      }
+    },
+    "Travel": {
+      "description": "Travel and vacation expenses - all expenses incurred during trips",
+      "active": true,
+      "subcategories": {
+        "Accommodation": {
+          "description": "Hotels, vacation rentals, lodging, camping",
+          "active": true
+        },
+        "Travel Transportation": {
+          "description": "Flights, trains, buses, rental cars, local transport during travel",
+          "active": true
+        },
+        "Travel Food & Dining": {
+          "description": "Restaurants, groceries, food purchases during travel",
+          "active": true
+        },
+        "Travel Activities": {
+          "description": "Tours, attractions, museums, vacation activities",
+          "active": true
+        },
+        "Travel Shopping": {
+          "description": "Souvenirs, clothing, necessities purchased during travel",
+          "active": true
+        },
+        "Travel Insurance": {
+          "description": "Travel insurance, medical coverage while traveling",
+          "active": true
+        },
+        "International Travel": {
+          "description": "International flights, visa fees, currency exchange",
+          "active": true
+        },
+        "Domestic Travel": {
+          "description": "Weekend trips, domestic vacation expenses",
+          "active": true
+        }
+      }
+    },
+    "Business Expenses": {
+      "description": "Business and professional expenses",
+      "active": true,
+      "subcategories": {
+        "Office Supplies": {
+          "description": "Business supplies and equipment",
+          "active": true
+        },
+        "Professional Services": {
+          "description": "Legal, accounting, consulting services",
+          "active": true
+        },
+        "Business Travel": {
+          "description": "Work-related travel expenses",
+          "active": true
+        },
+        "Networking & Events": {
+          "description": "Professional events, conferences, networking",
+          "active": true
+        }
+      }
+    }
+  }
+}

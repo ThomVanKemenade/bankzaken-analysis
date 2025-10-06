@@ -1,0 +1,934 @@
+{
+  "categorization_rules": {
+    "rules": [
+      {
+        "id": "rent_vanspeyk",
+        "name": "rent",
+        "description": "",
+        "category": "Housing & Utilities",
+        "subcategory": "Rent",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "OR",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "M.R. Van Bolhuis",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "D.J. Visser",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-05T22:43:14.791133",
+        "created_by": "user",
+        "last_modified_at": "2025-10-06T09:40:58.313004",
+        "last_modified_by": "user"
+      },
+      {
+        "id": "supermarkt",
+        "name": "supermarkt",
+        "description": "",
+        "category": "Food & Dining",
+        "subcategory": "Groceries",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "OR",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "ALBERT HEIJN",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "Jumbo",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "ALDI",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "LIDL",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-05T22:45:29.750633",
+        "created_by": "user",
+        "last_modified_at": "2025-10-05T22:47:17.711249",
+        "last_modified_by": "user"
+      },
+      {
+        "id": "housing_wasmachine",
+        "name": "housing_wasmachine",
+        "description": "",
+        "category": "Housing & Utilities",
+        "subcategory": "Utilities",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Counterparty_Name",
+          "operator": "contains",
+          "value": "De waslijn",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T09:43:33.511926",
+        "created_by": "user"
+      },
+      {
+        "id": "telefoon_abo_bijdrage",
+        "name": "telefoon_abo_bijdrage",
+        "description": "",
+        "category": "Subscriptions & Services",
+        "subcategory": "Mobile & Internet",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Description",
+          "operator": "contains",
+          "value": "Bijdrage Telefoonabonnement",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T11:42:57.188834",
+        "created_by": "user"
+      },
+      {
+        "id": "subscr_netflix",
+        "name": "subscr_netflix",
+        "description": "",
+        "category": "Subscriptions & Services",
+        "subcategory": "Streaming & Media",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Description",
+          "operator": "contains",
+          "value": "NETFLIX MAANDELIJKS",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T11:44:24.679552",
+        "created_by": "user"
+      },
+      {
+        "id": "income_belsimpel",
+        "name": "income_belsimpel",
+        "description": "",
+        "category": "Income",
+        "subcategory": "Employment",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "AND",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "mobielwerkt",
+              "case_sensitive": false
+            },
+            {
+              "field": "Amount",
+              "operator": "greater_than",
+              "value": "100",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T11:55:44.563046",
+        "created_by": "user"
+      },
+      {
+        "id": "financial_transfers",
+        "name": "financial_transfers",
+        "description": "",
+        "category": "Financial Services",
+        "subcategory": "Account Transfers",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "OR",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "thom van kemenade",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "T.R. VAN KEMENADE",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "T. VAN KEMENADE",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T12:02:01.113540",
+        "created_by": "user",
+        "last_modified_at": "2025-10-06T12:05:35.915826",
+        "last_modified_by": "user"
+      },
+      {
+        "id": "opa_giften",
+        "name": "opa_giften",
+        "description": "",
+        "category": "Family Support",
+        "subcategory": "General Gifts",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Counterparty_Name",
+          "operator": "contains",
+          "value": "J.C.A.M. van Kemenade",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T12:32:28.053662",
+        "created_by": "user"
+      },
+      {
+        "id": "subscr_spotify",
+        "name": "subscr_spotify",
+        "description": "",
+        "category": "Subscriptions & Services",
+        "subcategory": "Streaming & Media",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "AND",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "R.T.B. Kakkenberg",
+              "case_sensitive": false
+            },
+            {
+              "field": "Description",
+              "operator": "contains",
+              "value": "spotify",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T12:36:25.912880",
+        "created_by": "user"
+      },
+      {
+        "id": "food_bars",
+        "name": "food_bars",
+        "description": "",
+        "category": "Food & Dining",
+        "subcategory": "Bars & Pubs",
+        "priority": 70,
+        "active": true,
+        "conditions": {
+          "operator": "OR",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Boode Bv Bathmen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Cafe De Bisschop B Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*De Hip Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Dorst Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Drie Gezusters Gro Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Feest Groningen Bv Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Gelkinge 9 Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Het Pakhuis Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Karaokebar Sing Al",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Karaokebar Sing Al Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Malle Babbe Nymegen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Palace Groningen Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Ps 15 Exploitatie Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "De Brouwerij Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "De Drie Gezusters Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "De Toeter B.V. Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "El - Tram Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "El Tram",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "El Tram Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Hemingway'S Cuba Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Negende Cirkel Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Buckshot Cafe Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Club Kokomo Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*De Sleutel Culinai Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*House Of Billiards Nymegen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Stadsgarderobe Gro Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Het Burgersweeshuis Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Het Foute Oranjefeest Nijmegen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Dorst!? Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "F.F.J. Bernlef Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Gelkinge 9 Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Pay.Nl*Tante Toos",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Rap*Burgerweeshuis Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Sumup  *Copas Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Poolcentrum Vismar Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Cm.*Chupitos Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Cm.*Chupitos Groningen Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Tante Toos Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Sunny Beach Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Societeit Volonte Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Dansschool Eppink Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Mg De Tijd B.V. Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Midtown Blues Rock-C Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Euroborg Horeca B. Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Hoogstraat Groningen B Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Hoogstraat Groningen Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Hcr Boode B.V. Bathmen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Pool-Cafe Deventer",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Sep*Keyzer Cafe De Groningen",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Zettle_*Het Concerthui",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ccv*Mama Bv Groningen",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T12:41:16.206015",
+        "created_by": "user"
+      },
+      {
+        "id": "housing_internet",
+        "name": "housing_internet",
+        "description": "",
+        "category": "Housing & Utilities",
+        "subcategory": "Utilities",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "AND",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "E. Van Arkel",
+              "case_sensitive": false
+            },
+            {
+              "field": "Description",
+              "operator": "contains",
+              "value": "internet",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T12:53:13.201849",
+        "created_by": "user"
+      },
+      {
+        "id": "income_bijles",
+        "name": "income_bijles",
+        "description": "",
+        "category": "Income",
+        "subcategory": "Employment",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "OR",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "Otermans J W M",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "Bijlesnetwerk B V",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "S.J. Huinink eo K. van Geffen",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T13:00:00.260807",
+        "created_by": "user"
+      },
+      {
+        "id": "income_nosun",
+        "name": "income_nosun",
+        "description": "",
+        "category": "Income",
+        "subcategory": "Freelance & Business",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "AND",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "Nosun Reizen B.V.",
+              "case_sensitive": false
+            },
+            {
+              "field": "Amount",
+              "operator": "greater_than",
+              "value": "200",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T13:03:27.961190",
+        "created_by": "user"
+      },
+      {
+        "id": "healthcare_opticien",
+        "name": "healthcare_opticien",
+        "description": "",
+        "category": "Healthcare",
+        "subcategory": "Opticien",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "AND",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "Pearle Opticiens",
+              "case_sensitive": false
+            },
+            {
+              "field": "Amount",
+              "operator": "less_than",
+              "value": "-40",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T13:05:53.039284",
+        "created_by": "user"
+      },
+      {
+        "id": "health_psych_6011bfc8",
+        "name": "health_psych",
+        "description": "",
+        "category": "Healthcare",
+        "subcategory": "Mental Health",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Counterparty_Name",
+          "operator": "contains",
+          "value": "Psychologen.Nl B.V.",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T16:21:47.848449",
+        "created_by": "user"
+      },
+      {
+        "id": "food_farmersmarket_addec5be",
+        "name": "food_farmersmarket",
+        "description": "",
+        "category": "Food & Dining",
+        "subcategory": "Groceries",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Counterparty_Name",
+          "operator": "in",
+          "value": [
+            "Zwerwer'S Fruit Groningen",
+            "Kaper Groenten&Fruit Groningen",
+            "Ccv*Demi Fruit Groningen",
+            "Ccv*Jr Zwerver Groente Groningen",
+            "Ccv*Zwerwer Groningen",
+            "Kroesens Marktbakkerij Hoogeveen",
+            "Boulangerie Kroesen"
+          ],
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T16:23:25.155063",
+        "created_by": "user"
+      },
+      {
+        "id": "care_kapper_ea674006",
+        "name": "care_kapper",
+        "description": "",
+        "category": "Personal Care",
+        "subcategory": "Hair Care",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Counterparty_Name",
+          "operator": "in",
+          "value": [
+            "Onnes Coiffures",
+            "Onnes Coiffures Groningen",
+            "Total Look Deventer",
+            "Kapsalon Eiddel Groningen",
+            "Ccv*Super Cuts Kappers Groningen"
+          ],
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T16:25:27.665573",
+        "created_by": "user"
+      },
+      {
+        "id": "income_universiteit_eebb16e3",
+        "name": "income_universiteit",
+        "description": "",
+        "category": "Income",
+        "subcategory": "Employment",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "AND",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "in",
+              "value": [
+                "Rijksuniversiteit Gron"
+              ],
+              "case_sensitive": false
+            },
+            {
+              "field": "Description",
+              "operator": "contains",
+              "value": "Salaris",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T16:27:26.066167",
+        "created_by": "user"
+      },
+      {
+        "id": "subsc_mobiel_2867e66a",
+        "name": "subsc_mobiel",
+        "description": "",
+        "category": "Subscriptions & Services",
+        "subcategory": "Mobile & Internet",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "OR",
+          "rules": [
+            {
+              "field": "Description",
+              "operator": "contains",
+              "value": "50plus Mobiel - Abonnement",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "equals",
+              "value": "Ben Nederland",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T16:31:03.375867",
+        "created_by": "user"
+      },
+      {
+        "id": "educ_uni_eba56fcd",
+        "name": "educ_uni",
+        "description": "",
+        "category": "Education",
+        "subcategory": "Formal Education",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Description",
+          "operator": "contains",
+          "value": "collegegeld",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T16:52:58.721547",
+        "created_by": "user"
+      },
+      {
+        "id": "income_stembureau_b3b06ca5",
+        "name": "income_stembureau",
+        "description": "",
+        "category": "Income",
+        "subcategory": "Freelance & Business",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Description",
+          "operator": "contains",
+          "value": "Vergoeding stembureau",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T16:55:26.764132",
+        "created_by": "user"
+      },
+      {
+        "id": "tax_minicipal_e728e11a",
+        "name": "tax_minicipal",
+        "description": "",
+        "category": "Taxes & Government",
+        "subcategory": "Municipal Taxes",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Counterparty_Name",
+          "operator": "contains",
+          "value": "Noordelijk Belastingkant",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T16:57:09.695349",
+        "created_by": "user"
+      },
+      {
+        "id": "shop_drugstore_921360e7",
+        "name": "shop_drugstore",
+        "description": "",
+        "category": "Shopping",
+        "subcategory": "Drugstore/Pharmacy",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "operator": "OR",
+          "rules": [
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "Kruidvat",
+              "case_sensitive": false
+            },
+            {
+              "field": "Counterparty_Name",
+              "operator": "contains",
+              "value": "etos 77",
+              "case_sensitive": false
+            }
+          ]
+        },
+        "created_at": "2025-10-06T17:12:42.201660",
+        "created_by": "user"
+      },
+      {
+        "id": "finance_rente_de83beea",
+        "name": "finance_rente",
+        "description": "",
+        "category": "Financial Services",
+        "subcategory": "Banking",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Description",
+          "operator": "contains",
+          "value": "Rente over periode",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T17:17:36.184201",
+        "created_by": "user"
+      },
+      {
+        "id": "financ_banking_ad379a58",
+        "name": "financ_banking",
+        "description": "",
+        "category": "Financial Services",
+        "subcategory": "Banking",
+        "priority": 80,
+        "active": true,
+        "conditions": {
+          "field": "Description",
+          "operator": "contains",
+          "value": "Kosten rabo basispakket",
+          "case_sensitive": false
+        },
+        "created_at": "2025-10-06T17:33:03.043540",
+        "created_by": "user"
+      }
+    ]
+  },
+  "operators": {
+    "contains": "Field contains value",
+    "equals": "Field equals value exactly",
+    "starts_with": "Field starts with value",
+    "ends_with": "Field ends with value",
+    "greater_than": "Field is greater than value (numeric)",
+    "less_than": "Field is less than value (numeric)",
+    "regex": "Field matches regular expression"
+  },
+  "available_fields": [
+    "Date",
+    "Amount",
+    "Description",
+    "Counterparty_Name",
+    "Account_Number",
+    "Transaction_Type",
+    "Reference",
+    "Balance_After",
+    "Currency"
+  ]
+}
